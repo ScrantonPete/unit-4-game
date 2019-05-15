@@ -2,5 +2,15 @@ body {
   background: url("../images/bananas.png");
 }
 
-.randomNumber {
+.col-md-3,
+#random-number,
+#win-counter,
+#loss-counter {
+  background: white;
+}
+
+.crystal {
+  width: 22%;
+  height: 22%;
+  margin: 5px;
 }
