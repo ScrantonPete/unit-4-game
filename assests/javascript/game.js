@@ -1,13 +1,8 @@
 // GLOBAL VARIABLES (accessible by all functions)
 // ==================================================================================================
-var randomNumber = 0;
 var winCount = 0;
 var lossCount = 0;
 var totalScore = 0;
-var blueCrystalValue = 0;
-var purpleCrystalValue = 0;
-var orangeCrystalValue = 0;
-var greenCrystalValue = 0;
 
 // FUNCTIONS (These are bits of code that we will call upon to run when needed).
 // ==================================================================================================
@@ -41,6 +36,14 @@ $(document).ready(function() {
     greenCrystalValue = Math.floor(Math.random() * 12) + 1;
     orangeCrystalValue = Math.floor(Math.random() * 12) + 1;
     totalScore = 0;
+
+    console.log("rand # " + randomNumber);
+    console.log("rand # " + purpleCrystalValue);
+    console.log("rand # " + greenCrystalValue);
+    console.log("rand # " + orangeCrystalValue);
+    console.log("rand # " + totalScore);
+
+    $("#random-number").text(randomNumber);
     $("#total-score").text(totalScore);
   }
   // game is lost if user goes above the random number
@@ -48,7 +51,7 @@ $(document).ready(function() {
   function winGame() {
     alert("You win!!!");
     winCount++;
-    $("#win-count").text(winCount);
+    $("#win-counter").text(winCount);
     reset();
   }
   // game is lost if user goes above the random number
@@ -56,7 +59,10 @@ $(document).ready(function() {
   function loseGame() {
     alert("You Lost!");
     lossCount++;
-    $("#loss-count").text(lossCount);
+    console.log(lossCount);
+
+    $("#loss-counter").text(lossCount);
+    console.log(lossCount);
     reset();
   }
 
