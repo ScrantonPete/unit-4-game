@@ -5,7 +5,8 @@ body {
 .col-md-3,
 #random-number,
 #win-counter,
-#loss-counter {
+#loss-counter,
+#total-score {
   background: white;
 }
 
