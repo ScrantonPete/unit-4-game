@@ -23,11 +23,11 @@ $(document).ready(function() {
   var greenCrystalValue = Math.floor(Math.random() * 12) + 1;
   var orangeCrystalValue = Math.floor(Math.random() * 12) + 1;
   // Testing
-  // console.log("Rand " + randomNumber);
-  // console.log("Blue " + blueCrystalValue);
-  // console.log("Purple " + purpleCrystalValue);
-  // console.log("Green " + greenCrystalValue);
-  // console.log("Orange " + orangeCrystalValue);
+  console.log("Rand " + randomNumber);
+  console.log("Blue " + blueCrystalValue);
+  console.log("Purple " + purpleCrystalValue);
+  console.log("Green " + greenCrystalValue);
+  console.log("Orange " + orangeCrystalValue);
 
   // Counters
   $("#win-count").text(winCount);
@@ -43,6 +43,7 @@ $(document).ready(function() {
     totalScore = 0;
     $("#total-score").text(totalScore);
   }
+  // game is lost if user goes above the random number
 
   function winGame() {
     alert("You win!!!");
@@ -50,6 +51,7 @@ $(document).ready(function() {
     $("#win-count").text(winCount);
     reset();
   }
+  // game is lost if user goes above the random number
 
   function loseGame() {
     alert("You Lost!");
@@ -59,10 +61,12 @@ $(document).ready(function() {
   }
 
   $("#blueCrystal").on("click", function() {
+    // Total Score increases by the value of the crystal the user selected
     totalScore = totalScore + blueCrystalValue;
     console.log("Total Score " + totalScore);
     $("#total-score").text(totalScore);
-    if (totalscore === randomNumber) {
+    if (totalScore === randomNumber) {
+      // game is won if user matches the random number
       winGame();
     } else if (totalScore > randomNumber) {
       loseGame();
@@ -70,10 +74,12 @@ $(document).ready(function() {
   });
 
   $("#purpleCrystal").on("click", function() {
+    // Total Score increases by the value of the crystal the user selected
     totalScore = totalScore + purpleCrystalValue;
     console.log("Total Score " + totalScore);
     $("#total-score").text(totalScore);
-    if (totalscore === randomNumber) {
+    if (totalScore === randomNumber) {
+      // game is won if user matches the random number
       winGame();
     } else if (totalScore > randomNumber) {
       loseGame();
@@ -81,10 +87,12 @@ $(document).ready(function() {
   });
 
   $("#greenCrystal").on("click", function() {
+    // Total Score increases by the value of the crystal the user selected
     totalScore = totalScore + greenCrystalValue;
     console.log("Total Score " + totalScore);
     $("#total-score").text(totalScore);
-    if (totalscore === randomNumber) {
+    if (totalScore === randomNumber) {
+      // game is won if user matches the random number
       winGame();
     } else if (totalScore > randomNumber) {
       loseGame();
@@ -92,10 +100,12 @@ $(document).ready(function() {
   });
 
   $("#orangeCrystal").on("click", function() {
+    // Total Score increases by the value of the crystal the user selected
     totalScore = totalScore + orangeCrystalValue;
     console.log("Total Score " + totalScore);
     $("#total-score").text(totalScore);
-    if (totalscore === randomNumber) {
+    if (totalScore === randomNumber) {
+      // game is won if user matches the random number
       winGame();
     } else if (totalScore > randomNumber) {
       loseGame();
@@ -103,13 +113,7 @@ $(document).ready(function() {
   });
 });
 
-// Total Score increases by the value of the crystal the user selected
-
 // user continues to click crystals until they win the game or lose the game
-// game is won if user matches the random number
-// game is lost if user goes above the random number
-// win and loss counters are updated based on results
-// Game resets
 
 // MAIN PROCESS (THIS IS THE CODE THAT CONTROLS WHAT IS ACTUALLY RUN)
 // ==================================================================
