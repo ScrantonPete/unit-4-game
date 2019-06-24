@@ -45,6 +45,18 @@ $(document).ready(function() {
 
     $("#random-number").text(randomNumber);
     $("#total-score").text(totalScore);
+
+    baseFx
+      .animateProperty({
+        node: blueCrystal,
+        properties: {
+          top: { start: 25, end: 150 },
+          left: 0,
+          opacity: { start: 1, end: 0 }
+        },
+        duration: 800
+      })
+      .play();
   }
   // game is lost if user goes above the random number
 
